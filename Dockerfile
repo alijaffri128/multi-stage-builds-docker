@@ -7,6 +7,8 @@ RUN ./mvnw dependency:go-offline
 COPY ./src ./src
 RUN ./mvnw clean install
 
+# Here's the second stage, my fellas!!
+
 FROM eclipse-temurin:21.0.2_13-jre-jammy AS final
 WORKDIR /opt/app
 EXPOSE 8080
